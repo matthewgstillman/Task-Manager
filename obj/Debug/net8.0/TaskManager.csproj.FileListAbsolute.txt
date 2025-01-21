@@ -103,3 +103,7 @@
 /Users/mattstillman/Desktop/ASP-NET-Mvc-Projects/TaskManager/obj/Debug/net8.0/TaskManager.pdb
 /Users/mattstillman/Desktop/ASP-NET-Mvc-Projects/TaskManager/obj/Debug/net8.0/TaskManager.genruntimeconfig.cache
 /Users/mattstillman/Desktop/ASP-NET-Mvc-Projects/TaskManager/obj/Debug/net8.0/ref/TaskManager.dll
+/Users/mattstillman/Desktop/ASP-NET-Mvc-Projects/TaskManager/bin/Debug/net8.0/frontend/package-lock.json
+/Users/mattstillman/Desktop/ASP-NET-Mvc-Projects/TaskManager/bin/Debug/net8.0/frontend/package.json
+/Users/mattstillman/Desktop/ASP-NET-Mvc-Projects/TaskManager/bin/Debug/net8.0/frontend/public/manifest.json
+/Users/mattstillman/Desktop/ASP-NET-Mvc-Projects/TaskManager/bin/Debug/net8.0/frontend/tsconfig.json

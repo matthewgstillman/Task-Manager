@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
+import AllTasksDashboard from "./components/AllTasksDashboard";
 
 interface Task {
     id: string;
@@ -10,24 +11,11 @@ interface Task {
 }
 
 const App : React.FC = () => {
-    const [tasks, setTasks] = useState<Task[]>([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://localhost:5051/api/task');
-        console.log(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    return () => {
-      
-    };
-  }, []);
+    
   return (
     <div className="App">
       <h1>Task Manager</h1>
-      
+      <AllTasksDashboard/>
     </div>
   );
 }
