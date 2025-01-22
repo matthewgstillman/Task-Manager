@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react';
-import axios from 'axios';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AllTasksDashboard from "./components/AllTasksDashboard";
 
