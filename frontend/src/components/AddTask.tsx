@@ -1,48 +1,48 @@
-import { useState, useEffect } from 'react';
-import axios from "axios";
+import { useState }  from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
-
-interface Task {
-    id: string;
-    title: string;
-    dueDate: string;
-    isComplete: boolean;
-}
+import API from "../API";
 
 const AddTask: React.FC = () => {
-    const [tasks, setTasks] = useState<Task[]>([]);
+    const [title, setTitle] = useState("");
+    const [dueDate, setDueDate] = useState("");
+    const [isComplete, setIsComplete] = useState(false);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:5051/api/task');
-                console.log(response.data);
-                setTasks(response.data);
-            } catch (error) {
-                console.error("Error fetching tasks:", error);
-            }
-        };
-
-        fetchData().then(r => console.log("Tasks fetched"));
-
-    }, []);
-
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        API.post("/task", { title, dueDate, isComplete }).then((response) => {
+           setTitle("");
+           setDueDate("");
+           setIsComplete(false);
+        })
+    };
+    
     return (
         <div>
             <h1>Add a Task</h1>
             <div className="addTaskContainer">
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="task">
                         <Form.Label>Task</Form.Label>
-                        <Form.Control type="title" placeholder="Enter Task" />
+                        <Form.Control 
+                            type="title"
+                            value={title}
+                            onChange={(event) => setTitle(event.target.value)}
+                            placeholder="Enter Task"
+                        />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="dateTimePicker">
                         <Form.Label>Due Date</Form.Label>
-                        <Form.Control type="datetime-local" placeholder="Date/Time" />
+                        <Form.Control 
+                            type="datetime-local" 
+                            value={dueDate}
+                            onChange={(event) => setDueDate(event.target.value)}
+                            placeholder="Enter the due date and time"
+                        />
                     </Form.Group>
                     
                     <Form.Group className="mb-3" controlId="isComplete">
