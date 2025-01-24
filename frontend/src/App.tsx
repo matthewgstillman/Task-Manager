@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AllTasksDashboard from "./components/AllTasksDashboard";
+import AddTask from "./components/AddTask";
 
 interface Task {
     id: string;
@@ -16,6 +17,7 @@ const App : React.FC = () => {
     <div className="App">
       <h1>Task Manager</h1>
       <AllTasksDashboard/>
+        <AddTask/>
     </div>
   );
 }
