@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
+import '../styles/App.scss';
 
 interface Task {
     id: string;
@@ -30,7 +30,7 @@ const AllTasksDashboard: React.FC = () => {
     }, []);
 
     return (
-        <div>
+        <div className="allTasksDashboardContainer">
             <h1>All Tasks Dashboard</h1>
             <div className="taskListContainer">
                 <ListGroup className="taskList">

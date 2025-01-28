@@ -1,0 +1,25 @@
+$light-blue: #6CAEDF;
+
+.App {
+  text-align: center;
+  background-color: $light-blue;
+  
+  .allTasksDashboardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+
+    .tasktaskListContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}
+

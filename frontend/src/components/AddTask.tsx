@@ -3,7 +3,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
+import '../styles/App.scss';
 import API from "../API";
 
 const AddTask: React.FC = () => {
