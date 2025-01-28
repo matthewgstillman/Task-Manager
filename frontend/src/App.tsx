@@ -1,8 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import AllTasksDashboard from "./components/AllTasksDashboard";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
 import AddTask from "./components/AddTask";
+import AllTasksDashboard from "./components/AllTasksDashboard";
 
 interface Task {
     id: string;
@@ -14,11 +20,14 @@ interface Task {
 const App : React.FC = () => {
     
   return (
-    <div className="App">
-      <h1>Task Manager</h1>
-      <AllTasksDashboard/>
-        <AddTask/>
-    </div>
+      <Router>
+          <div className="App">
+              <Routes>
+                  <Route path="/" element={<AllTasksDashboard />} />
+                  <Route path="/addtask" element={<AddTask />} />
+              </Routes>
+          </div>
+      </Router>
   );
 }
 
